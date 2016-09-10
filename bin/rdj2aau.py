@@ -35,6 +35,7 @@ times.format='fits'
 aau = numpy.transpose([aacoords.az,aacoords.alt,times,transits[:,3]])
 aau_fin = []
 for i in range(len(aau)):
+    # Filter transits with alt above 40 degrees only
     if aau[i,1] >= 40.:
         if len(aau_fin) == 0:
             aau_fin = aau[i,:]
